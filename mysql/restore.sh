@@ -3,7 +3,7 @@
 #REMOTE_SERVER_IP=
 #rsync -avz --progress /home/temp_transfer/ root@$REMOTE_SERVER_IP:/home/temp_transfer/
 
-read -p "Please enter the full path of the backup directory (e.g., /home/temp_transfer/full_2023-12-27-05-00): " input
+read -p "Please enter the full path of the backup directory (e.g., /data/mysql_backup_data/full_2024-05-29-20-10): " input
 BACKUP_DIR=$(echo $input | xargs)
 
 docker rm -f mysql
