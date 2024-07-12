@@ -18,3 +18,11 @@ sudo chmod +x backup.sh && sudo ./backup.sh
 wget https://raw.githubusercontent.com/cfd2022/tools/master/mysql/restore.sh
 sudo chmod +x restore.sh && sudo ./restore.sh
 ```
+
+
+# Glider SOCKS5
+```
+apt update && apt install -y git wget sudo
+wget https://raw.githubusercontent.com/cfd2022/tools/main/glider/install_glider.sh
+sudo chmod +x install_glider.sh && sudo ./install_glider.sh
+```
