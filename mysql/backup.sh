@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#volume:[mysql_backup:/home/backup]
-BACKUP_BASE_DIR=/home/backup/mysql
+#Docker Volume:[mysql_backup:/home/mysql_backup]
+BACKUP_BASE_DIR=/home/mysql_backup
 BACKUP_PREFIX="full_"
 
 CONFIG_FILE="/tmp/backup_config.txt"
