@@ -49,9 +49,9 @@ if [[ "$confirm" != "y" ]]; then
     exit 1
 fi
 
-# Execute the mount command
+# Execute the mount command without big_writes
 echo "Mounting remote directory to local path..."
-sshpass -p "$remote_password" sshfs -o UserKnownHostsFile=/dev/null,StrictHostKeyChecking=no,big_writes,cache=yes "$remote_user@$remote_host:$remote_dir" "$local_mount"
+sshpass -p "$remote_password" sshfs -o UserKnownHostsFile=/dev/null,StrictHostKeyChecking=no,cache=yes "$remote_user@$remote_host:$remote_dir" "$local_mount"
 
 # Verify if the mount was successful
 if mount | grep -q "$local_mount"; then
