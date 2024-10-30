@@ -12,15 +12,16 @@ remote_host=$(trim "$remote_host")
 read -p "Enter the remote server username: " remote_user
 remote_user=$(trim "$remote_user")
 
-read -s -p "Enter the remote server password: " remote_password
+read -p "Enter the remote server password (visible): " remote_password
 remote_password=$(trim "$remote_password")
-echo ""
 
 read -p "Enter the remote directory path (e.g., /path/to/remote/directory): " remote_dir
 remote_dir=$(trim "$remote_dir")
 
-read -p "Enter the local mount path (e.g., /mnt/remote_server): " local_mount
-local_mount=$(trim "$local_mount")
+# Set default local mount path based on remote host
+default_local_mount="/mnt/$remote_host"
+read -p "Enter the local mount path [default: $default_local_mount]: " local_mount
+local_mount=$(trim "${local_mount:-$default_local_mount}")
 
 # Install sshpass and sshfs if they are not installed
 if ! command -v sshpass &> /dev/null || ! command -v sshfs &> /dev/null; then
@@ -38,6 +39,7 @@ echo ""
 echo "Please confirm the following configuration:"
 echo "Remote server: $remote_host"
 echo "Remote username: $remote_user"
+echo "Remote password: $remote_password"
 echo "Remote directory path: $remote_dir"
 echo "Local mount path: $local_mount"
 read -p "Is this information correct? [y/n]: " confirm
