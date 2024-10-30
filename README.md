@@ -26,3 +26,11 @@ apt update && apt install -y git wget sudo
 wget https://raw.githubusercontent.com/cfd2022/tools/main/glider/install_glider.sh
 sudo chmod +x install_glider.sh && sudo ./install_glider.sh
 ```
+
+
+# Mount RemoteServer as LocalDisk
+```
+apt update && apt install -y git wget sudo
+wget https://raw.githubusercontent.com/cfd2022/tools/refs/heads/main/mysql/mount_remote_server_as_disk.sh
+sudo chmod +x mount_remote_server_as_disk.sh && sudo ./mount_remote_server_as_disk.sh
+```
